@@ -1,0 +1,20 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    "package-lock.json": true,
+    "tsconfig.json": true,
+    // "*/*.css": true,
+    // "*/*.css.map": true,
+    // "*/*/*.css": true,
+    // "*/*/*.css.map": true,
+    "src/react-app-env.d.ts": true,
+    "src/reportWebVitals.ts": true,
+    "src/setupTests.ts": true,
+    // "src/logo.svg": true,
+    
+    "public/": true,
+    "src/App.test.tsx": true,
+    ".gitignore": true,
+    // "README.md": true,
+  },
+}
