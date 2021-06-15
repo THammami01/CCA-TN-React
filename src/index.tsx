@@ -3,21 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createStore } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { Provider } from "react-redux";
-import allReducers from "./state/reducers";
-
-const store = createStore(allReducers, composeWithDevTools());
-
-// WHENEVER AN ACTION IS DISPATCHED, DISPLAY STATE IN THE CONSOLE
-// store.subscribe(() => console.log(store.getState()));
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

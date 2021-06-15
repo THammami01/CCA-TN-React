@@ -1,4 +1,29 @@
-// INIT
+:root {
+  --color0: #16181d;
+  --color1: #f5f5f5;
+  --color2: #deeeea;
+  --color3: #793ef9;
+  --color3-alt: #8a60e6;
+  --color3-alt2: #793ef910;
+  --color4: #f93e3e88;
+  --color4-alt: #db0f0f;
+  --color5: #ff0000;
+}
+
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(./fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url(./fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
 
 @font-face {
   font-family: Roboto-Regular;
@@ -15,6 +40,53 @@
   src: url(./fonts/Roboto/Roboto-Bold.ttf);
 }
 
+/* Hide scrollbar for Chrome */
+*::-webkit-scrollbar {
+  display: none;
+}
+
 * {
-  font-family: Roboto-Regular;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  margin: 0;
+
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: Roboto-Medium;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+input,
+textarea,
+button,
+select {
+  outline: none;
+  border: 0.1rem solid var(--color2);
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  background-color: var(--color1);
+}
+
+button,
+svg,
+li {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: var(--color0);
+  color: var(--color0);
+  scroll-behavior: smooth;
 }

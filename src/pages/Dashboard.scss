@@ -1,0 +1,113 @@
+:root {
+  --color0: #16181d;
+  --color1: #f5f5f5;
+  --color2: #deeeea;
+  --color3: #793ef9;
+  --color3-alt: #8a60e6;
+  --color3-alt2: #793ef910;
+  --color3-alt3: #9069e47a;
+  --color4: #f93e3e88;
+  --color4-alt: #ce1313;
+  --color5: #ff0000;
+  --color6: #090a33;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+
+  .side-bar {
+    flex: 1;
+    height: 100vh;
+    min-width: 250px;
+
+    > section {
+      background-color: var(--color0);
+      color: var(--color2);
+      min-width: 250px;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      min-height: 100vh;
+
+      > .logo {
+        margin: 1rem auto 0;
+
+        img {
+          width: 100px;
+        }
+      }
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--color3);
+      border-radius: 1.5rem;
+
+      label {
+        display: flex;
+        gap: 0.5rem;
+        cursor: pointer;
+        padding: 1rem;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        transition: display 300ms;
+
+        a {
+          border-radius: 0.5rem;
+          font-size: 0.9rem;
+          padding: 0.4rem 1.25rem;
+          margin-bottom: 0.2rem;
+          transition: background 300ms;
+
+          &:hover {
+            background-color: var(--color3-alt);
+          }
+
+          &:last-child {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+
+      &.role {
+        background-color: initial;
+        align-items: center;
+        border-bottom: 0.2rem solid var(--color3);
+        border-radius: 0;
+        margin-bottom: 0.5rem;
+
+        label {
+          padding-right: 1.75rem;
+        }
+
+        svg {
+          transform: translateY(2px);
+        }
+      }
+
+      &.settings {
+        background-color: initial;
+        transition: background-color 500ms;
+        border: 0.1rem solid var(--color3-alt3);
+        font-size: 1rem;
+
+        svg {
+          transform: rotate(180deg) translateY(-1px);
+        }
+      }
+    }
+  }
+
+  .main-content {
+    flex: 6;
+    background-color: var(--color2);
+  }
+}

@@ -1,0 +1,214 @@
+:root {
+  --color0: #16181d;
+  --color1: #f5f5f5;
+  --color2: #deeeea;
+  --color3: #793ef9;
+  --color3-alt: #8a60e6;
+  --color3-alt2: #793ef910;
+  --color4: #f93e3e88;
+  --color4-alt: #db0f0f;
+  --color4-alt2: #d32929;
+  --color5: #ff0000;
+}
+
+.main-content {
+  padding: 0.5rem 3rem 3rem;
+
+  h1 {
+    background: rgb(121, 62, 163);
+    background: linear-gradient(120deg, #f5f5f5 0%, #aaffff 50%, #deeeea 100%);
+
+    margin: -1rem -3rem 1rem -3rem;
+    padding: 2.5rem 3rem 2rem;
+    text-transform: uppercase;
+
+    svg {
+      transform: translateY(3px);
+      margin-right: 1rem;
+    }
+  }
+
+  &.welcome {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    p {
+      max-width: 700px;
+      line-height: 1.5rem;
+    }
+  }
+
+  &.profile {
+    > div {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      align-items: center;
+
+      div {
+        p {
+          margin: 0.5rem 0;
+        }
+      }
+
+      img {
+        width: 200px;
+      }
+    }
+
+    button {
+      background-color: initial;
+      transition: background-color 500ms;
+      border: 0.1rem solid var(--color4);
+      width: fit-content;
+      margin-top: 2rem;
+
+      color: var(--color1);
+      background-color: var(--color4-alt);
+
+      &:hover {
+        background-color: var(--color4-alt2);
+      }
+
+      svg {
+        transform: rotate(180deg) translateY(-1px);
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &.see-all-employees {
+    table {
+      border-collapse: collapse;
+      border: 0.15rem solid var(--color3-alt2);
+      margin-bottom: 1rem;
+    }
+
+    th,
+    td {
+      width: 200px;
+      min-width: 150px;
+      border: 0.15rem solid var(--color3-alt2);
+      padding: 0.5rem;
+    }
+
+    th {
+      background-color: var(--color3-alt2);
+    }
+
+    td {
+      cursor: pointer;
+    }
+
+    tbody > tr {
+      transition: background 300ms;
+
+      &:hover {
+        background-color: var(--color3-alt2);
+      }
+    }
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+
+      p,
+      button {
+        min-width: 6rem;
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        transition: background-color 500ms;
+      }
+
+      button {
+        border: 0.15rem solid var(--color3-alt2);
+
+        &:hover {
+          background-color: var(--color3-alt2);
+        }
+      }
+
+      button.disabled {
+        cursor: default;
+        background-color: inherit;
+      }
+    }
+  }
+
+  @mixin crud-employee {
+    div {
+      padding: 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      input,
+      select {
+        min-width: 350px;
+        width: 40%;
+        max-width: 600px;
+      }
+
+      option {
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+      }
+
+      &.btns {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+
+        button {
+          min-width: 6rem;
+          font-size: 0.9rem;
+          padding: 0.5rem 1rem;
+          text-align: center;
+          transition: background-color 500ms;
+        }
+      }
+    }
+  }
+
+  &.add-employee,
+  &.update-employee,
+  &.delete-employee {
+    @include crud-employee;
+
+    .btns > button {
+      border: 0.15rem solid var(--color3-alt2);
+
+      &:hover {
+        background-color: var(--color3-alt2);
+      }
+
+      &.delete-btn {
+        color: var(--color1);
+        background-color: var(--color4-alt);
+
+        &:hover {
+          background-color: var(--color4-alt2);
+        }
+      }
+    }
+  }
+
+  &.update-employee {
+    .id-input {
+      cursor: not-allowed;
+    }
+  }
+
+  &.delete-employee {
+    .delete-form {
+      input,
+      select,
+      option {
+        cursor: not-allowed !important;
+      }
+    }
+  }
+}
