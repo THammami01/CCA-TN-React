@@ -17,3 +17,15 @@
 > git remote add origin https://github.com/THammami01/CCA-TN-React.git
 >
 > git push -u origin main
+>
+> git add . && git commit –m "..."
+>
+> git checkout master
+>
+> git merge new-branch
+
+From dev
+
+> git push -u origin dev
+>
+> git push

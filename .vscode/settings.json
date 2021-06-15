@@ -12,7 +12,7 @@
     "src/setupTests.ts": true,
     // "src/logo.svg": true,
     
-    "public/": true,
+    // "public/": true,
     "src/App.test.tsx": true,
     ".gitignore": true,
     // "README.md": true,
